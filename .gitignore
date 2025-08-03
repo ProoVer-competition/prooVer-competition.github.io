@@ -1,0 +1,25 @@
+# Jekyll build folder
+_site/
+
+# Bundler config
+/.bundle
+
+# Jekyll cache
+.jekyll-cache/
+
+# Ruby gems
+*.gem
+*.rbc
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~

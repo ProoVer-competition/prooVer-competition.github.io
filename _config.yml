@@ -1,0 +1,26 @@
+title: ProoVer
+baseurl: ""            # empty for user site
+url: "https://prooVer-competition.github.io"   # replace with your GitHub username URL
+
+theme: minima
+
+navigation:
+  - title: Home
+    url: /
+  - title: Competitions
+    url: /competitions/
+  - title: Competition Setup
+    url: /competition-setup/
+  - title: Rules
+    url: /rules/
+  - title: Proofs Examples
+    url: /proofs-examples/
+  - title: Registration
+    url: /registration/
+  - title: System Requirements
+    url: /system-requirements/
+
+collections:
+  competitions:
+    output: true
+    permalink: /competitions/:name/
