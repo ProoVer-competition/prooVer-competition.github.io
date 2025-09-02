@@ -1,0 +1,19 @@
+--- 
+--- 
+@import "minima"; // load original minima styles
+
+/* your overrides below */
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.site-nav .page-link {
+    white-space: nowrap;
+}
+
+.wrapper {
+    max-width: 1200px;
+    /* or any width you like */
+}

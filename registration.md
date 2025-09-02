@@ -2,8 +2,7 @@
 layout: page
 title: Registration
 permalink: /registration/
+nav_order: 4
 ---
 
-# Rules
-
-Details about the registration, fees, etc
+Details about the registration, fees, etc, will come soon!

@@ -1,12 +1,10 @@
 ---
 layout: home
-title: "Verifier Competition News"
+title: ""
 ---
 
-Welcome to the ProoVer Competition website!
+The **ProoVer Competition** is an annual competition for proof checkers.  
 
-Here you will find the latest news and updates.
+Inspired by the [CADE ATP System Competition (CASC)](https://tptp.org/CASC/), ProoVer aims to benchmark the correctness and robustness of proof checkers within the TPTP ecosystem.
 
-This website provides all information about the verifier competition series.
-
-Use the navigation menu to explore competitions, rules, registration, and more.
+Participants submit both correct and “buggy” proofs, and their systems must determine the validity of each proof. Contestants are required to implement a proof checker that can call an external prover for some steps, while verifying specific proof steps internally within their tool.

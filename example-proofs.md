@@ -2,8 +2,7 @@
 layout: page
 title: Example Proofs
 permalink: /example-proofs/
+nav_order: 3
 ---
 
-# Example Proofs
 
-Details about the proofs will go here.
