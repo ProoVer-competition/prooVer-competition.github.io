@@ -11,20 +11,35 @@ nav_order: 1
 * Entrants must deliver a package containing everything required, including any external tools.
 
 # Output 
-* Proof: `%SZS Proof Checked`
-* No proof: `%SZS Proof Error at step X`
+For each input problem, the system must produce exactly one of the following SZS status lines:
+
+* Valid proof: `%SZS Proof Checked`
+* Invalid proof: `%SZS Proof Error at step X`  
+  (where `X` indicates the first incorrect step)
 * Gave up: `%SZS Gave up`
 
+Any other output will be treated as a failure for the corresponding problem.
+
 # System Evaluation
-* 100 proofs (50 good / 50 bad proof)
-* Timeout: 30 seconds
+* 100 proof validation problems:
+  * 50 valid proofs
+  * 50 invalid proofs
+* Time limit: 30 seconds per problem
+* Each problem is evaluated independently.
 
 # Grading Scheme
-* Identifying a Bad proof as Bad = +2
-* Identifying a Good proof as Good = +1
+* Identifying a bad proof as bad = +2
+* Identifying a good proof as good = +1
 * Giving up = 0
-* Identifying a Good proof as Bad = -1
-* Identifying a Bad proof as Good = -10
+* Identifying a good proof as bad = −1
+* Identifying a bad proof as good = −10
+
+The final score is the sum over all problems.
+
+In case of a tie, we will *not* break it.
 
 # Organization 
-For questions, please contact [Julie Cailler](mailto:julie.cailler@loria.fr) or [Simon Guilloud](mailto:simon.guilloud@epfl.ch).
+
+For questions, please contact:
+* Julie Cailler — julie.cailler@loria.fr  
+* Simon Guilloud — simon.guilloud@epfl.ch
