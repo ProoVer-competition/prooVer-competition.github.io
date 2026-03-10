@@ -13,10 +13,9 @@ nav_order: 1
 # Output 
 For each input problem, the system must produce exactly one of the following SZS status lines:
 
-* Valid proof: `%SZS Proof Checked`
-* Invalid proof: `%SZS Proof Error at step X`  
-  (where `X` indicates the first incorrect step)
-* Gave up: `%SZS Gave up`
+* Valid proof: `%SZS status Verified`
+* Invalid proof: `%SZS status FailedVerified`  
+* Gave up: `%SZS status NotVerified`
 
 Any other output will be treated as a failure for the corresponding problem.
 
