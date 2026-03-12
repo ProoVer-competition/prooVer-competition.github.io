@@ -31,26 +31,48 @@ fof(s3, plain, p(f(f(a))), inference(horn, [status(thm)], [a2, s1, s2])).
 
 ### Example 3
 <pre>
-%----Starting formula
-fof(marriage, plain, 
+%----At every marriage, there is a bride and groom who are in love
+fof(marriage, axiom, 
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
     in_love(Groom, Bride)).
 
-%----Skolemize Bride
+%----There exists at least one marriage
+fof(exists_marriage, axiom, 
+    is_marriage(m0)).
+
+%----Conjecture: someone is in love
+fof(c, conjecture, 
+    ? [X] :
+    ? [Y] :
+    in_love(X, Y)).
+
+%----Negate conjecture: nobody is in love
+fof(neg_c, negated_conjecture, 
+    ~(? [X] :
+    ? [Y] :
+    in_love(X, Y)), inference(negated_conjecture, [status(cth)], [c])).
+
+%----Skolemize Bride 
 fof(bride, plain, 
     ! [Marriage] :
     ? [Groom] :
-    in_love(Groom, sK0(Marriage)), 
-    inference(skolemize, [status(esa), new_symbols(skolem, [sK0]), skolemized(Bride), bind(Bride, sK0(Marriage))], [marriage])).
+    in_love(Groom, sK0(Marriage)), inference(skolemize, [status(esa), new_symbols(skolem, [sK0]), skolemized(Bride), bind(Bride, sK0(Marriage))], [marriage])).
 
 %----Skolemize Groom
 fof(groom, plain, 
     ! [Marriage] :
-    in_love(sK1(Marriage), sK0(Marriage)), 
-    inference(skolemize, [status(esa), new_symbols(skolem, [sK1]), skolemized(Groom), bind(Groom, sK1(Marriage))], [bride])).
+    in_love(sK1(Marriage), sK0(Marriage)), inference(skolemize, [status(esa), new_symbols(skolem, [sK1]), skolemized(Groom), bind(Groom, sK1(Marriage))], [bride])).
 
+%----Instantiate at the known marriage m0
+fof(groom_m0, plain, 
+    in_love(sK1(m0), sK0(m0)), inference(instantiate, [status(thm)], [groom])).
+
+%----Contradiction
+fof(contradiction, plain, 
+    $false,
+    inference(consequence, [status(thm)], [neg_c, groom_m0])).
 </pre>  
 
 <br/>
@@ -82,44 +104,100 @@ The `deduction` steps are not correct. From `(f(f(X)) = f(g(X)) ∨ g(f(X)) = f(
 
 ### Example 3
 <pre>
-fof(marriage,plain,
+%----At every marriage, there is a bride and groom who are in love
+fof(marriage, axiom, 
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-      in_love(Groom,Bride) ).
+    in_love(Groom, Bride)).
 
+%----There exists at least one marriage
+fof(exists_marriage, axiom, 
+    is_marriage(m0)).
+
+%----Conjecture: someone is in love
+fof(c, conjecture, 
+    ? [X] :
+    ? [Y] :
+    in_love(X, Y)).
+    
+%----Negate conjecture: nobody is in love
+fof(neg_c, negated_conjecture, 
+    ~(? [X] :
+    ? [Y] :
+    in_love(X, Y)), inference(negated_conjecture, [status(cth)], [c])).
+
+%----Skolemize Bride 
 fof(bride,plain,
     ! [Marriage] :
     ? [Groom] :
       in_love(Groom,sK0(Marriage)),
     inference(skolemize, [status(esa), new_symbols(skolem, [sK0]), skolemized(Bride), bind(Bride, sK0(Marriage))], [marriage])).
-    
+
+%----Skolemize Groom     
 fof(groom,plain,
     ! [Marriage] :
       in_love(sK0(Marriage),sK0(Marriage)),
     inference(skolemize,[status(esa), new_symbols(skolem, [sK0]), skolemized(Groom), bind(Groom, sK0(Marriage))], [bride])).
+
+%----Instantiate at the known marriage m0
+fof(groom_m0, plain, 
+    in_love(sK0(m0), sK0(m0)), inference(instantiate, [status(thm)], [groom])).
+
+%----Contradiction
+fof(contradiction, plain, 
+    $false,
+    inference(consequence, [status(thm)], [neg_c, groom_m0])).    
 </pre>
 
 This proof is wrong as it reuses the same Skolem symbol `sK0` twice. 
 
 ## Example 4
 <pre>
-fof(marriage,plain,
+%----At every marriage, there is a bride and groom who are in love
+fof(marriage, axiom, 
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-      in_love(Groom,Bride) ).
+    in_love(Groom, Bride)).
 
+%----There exists at least one marriage
+fof(exists_marriage, axiom, 
+    is_marriage(m0)).
+
+%----Conjecture: someone is in love
+fof(c, conjecture, 
+    ? [X] :
+    ? [Y] :
+    in_love(X, Y)).
+    
+%----Negate conjecture: nobody is in love
+fof(neg_c, negated_conjecture, 
+    ~(? [X] :
+    ? [Y] :
+    in_love(X, Y)), inference(negated_conjecture, [status(cth)], [c])).
+
+%----Skolemize Bride 
 fof(bride,plain,
     ! [Marriage] :
     ? [Groom] :
       in_love(Groom,sK0(Marriage)),
     inference(skolemize, [status(esa), new_symbols(skolem, [sK0]), skolemized(Bride), bind(Bride, sK0(Marriage))], [marriage])).
 
+%----Skolemize Groom 
 fof(groom,plain,
     ! [Marriage] :
       in_love(Marriage,sK0(Marriage)),
     inference(skolemize, [status(esa), new_symbols(skolem, [sK1]), skolemized(Groom), bind(Groom, sK1(Marriage))], [bride])).
+
+%----Instantiate at the known marriage m0
+fof(groom_m0, plain, 
+    in_love(m0, sK0(m0)), inference(instantiate, [status(thm)], [groom])).
+
+%----Contradiction
+fof(contradiction, plain, 
+    $false,
+    inference(consequence, [status(thm)], [neg_c, groom_m0])).    
 </pre>
 
 The second inference step introduces `sK1` for `Groom`, but the resulting formula is `in_love(Marriage, sK0(Marriage))`. The correct result should be `in_love(sK1(Marriage), sK0(Marriage))`. 
