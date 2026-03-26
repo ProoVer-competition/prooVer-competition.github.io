@@ -24,9 +24,11 @@ fof(a1, axiom, ![X]: (p(X) => p(f(X)))).
 fof(a2, axiom, p(a)).
 fof(c, conjecture, p(f(f(a)))).
 
-fof(s1, plain, p(a) => p(f(a)), inference(instantiate, [status(thm)], [a1])).
-fof(s2, plain, p(f(a)) => p(f(f(a))), inference(instantiate, [status(thm)], [a1])).
-fof(s3, plain, p(f(f(a))), inference(horn, [status(thm)], [a2, s1, s2])).
+fof(s1, plain, ~p(f(f(a))), inference(negated_conjecture, [status(thm)], [c])).
+fof(s2, plain, p(a) => p(f(a)), inference(instantiate, [status(thm)], [a1])).
+fof(s3, plain, p(f(a)) => p(f(f(a))), inference(instantiate, [status(thm)], [a1])).
+fof(s4, plain, p(f(f(a))), inference(horn, [status(thm)], [a2, s1, s2])).
+fof(s5, plain, $false, inference(consequence, [status(thm)], [s1, s4])).
 </pre>
 
 ### Example 3
@@ -95,12 +97,14 @@ fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X)))).
 
 fof(c, conjecture, g(f(a)) = f(g(a))).
 
-fof(s1, plain, f(f(a)) = f(g(a)), inference(deduction, [status(thm)], [a1])).
-fof(s2, plain, f(f(a)) = g(f(a)), inference(deduction, [status(thm)], [a1])).
-fof(s3, plain, g(f(a)) = f(g(a)), inference(deduction, [status(thm)], [s1, s2])).
+fof(s1, plain, ~(g(f(a)) = f(g(a))), inference(negated_conjecture, [status(thm)], [c])).
+fof(s2, plain, f(f(a)) = f(g(a)), inference(deduction, [status(thm)], [a1])).
+fof(s3, plain, f(f(a)) = g(f(a)), inference(deduction, [status(thm)], [a1])).
+fof(s4, plain, g(f(a)) = f(g(a)), inference(deduction, [status(thm)], [s2, s3])).
+fof(s5, plain, $false, inference(deduction, [status(thm)], [s1, s4])).
 </pre>
 
-The `deduction` steps are not correct. From `(f(f(X)) = f(g(X)) ∨ g(f(X)) = f(f(X)))` and `X = a`, we can derive `f(f(a)) = f(g(a))  ∨  g(f(a)) = f(f(a))`, but here, we derive both statement `s1: f(f(a)) = f(g(a))` and `s2: f(f(a)) = g(f(a))` independently. The proof step incorrectly treats a disjunction as if both disjuncts were true.
+The `deduction` steps are not correct. From `(f(f(X)) = f(g(X)) ∨ g(f(X)) = f(f(X)))` and `X = a`, we can derive `f(f(a)) = f(g(a))  ∨  g(f(a)) = f(f(a))`, but here, we derive both statement `s1: f(f(a)) = f(g(a))` and `s2: f(f(a)) = g(f(a))` independently. The proof step incorrectly treats a disjunction as if both disjuncts were true. 
 
 ### Example 3
 <pre>
