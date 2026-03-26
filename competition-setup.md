@@ -23,7 +23,7 @@ Any other output will be treated as a failure for the corresponding problem.
 * 100 proof validation problems:
   * 50 valid proofs
   * 50 invalid proofs
-* Time limit: 30 seconds per problem
+* Time limit: 30 seconds per problem (WC)
 * Each problem is evaluated independently.
 
 # Grading Scheme
