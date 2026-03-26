@@ -25,6 +25,7 @@ Any other output will be treated as a failure for the corresponding problem.
   * 50 invalid proofs
 * Time limit: 30 seconds per problem (WC)
 * Each problem is evaluated independently.
+* In case of ex-aeqo, the fastest proof-checker will win. 
 
 # Grading Scheme
 * Identifying a bad proof as bad = +2
