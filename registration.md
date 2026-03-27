@@ -12,14 +12,13 @@ For each system entered an entrant must be nominated to handle all issues (e.g.,
 <!-- Note about common registration to ProoVer and CASC -->
 
 
-<!-- ## System Description
-A system description must be provided for each proof checker system, using this HTML schema. The schema has the following sections:
-* Architecture. This section introduces the ATP system, and describes the calculus and inference rules used.
-* Strategies. This section describes the search strategies used, why they are effective, and how they are selected for given problems. Any strategy tuning that is based on specific problems' characteristics must be clearly described (and justified in light of the tuning restrictions).
-* Implementation. This section describes the implementation of the ATP system, including the programming language used, important internal data structures, and any special code libraries used. The availability of the system is also given here.
-* Expected competition performance. This section makes some predictions about the performance of the ATP system for each of the divisions and categories in which it is competing.
+## System Description
+A system description must be provided for each proof checker system, using [this HTML schema](./assets/htmlschema.html). The schema has the following sections:
+* Overview: This section introduces the proof checker and its main design choices. It may also describe its checking strategy, including when the system reports "NotVerified" versus attempting additional verification steps, as well as any notable features.
+* Implementation: This section describes the implementation of the proof checker system, including the programming language used, important internal data structures, and any special code libraries. It should also specify any backend ATP or external tools used. The availability of the system is given here. A brief explanation of how proofs are verified should also be included.
+* Expected competition performance: This section makes some predictions about the performance of the proof checker. 
 * References.
 
-The system description must be emailed to the competition organizer by the [system submission deadline](./competitions/2026.md). The system descriptions form part of the competition proceedings. -->
+The system description must be emailed to the competition organizer by the [system submission deadline](./competitions/2026.md). The system descriptions form part of the competition proceedings.
 
 
