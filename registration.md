@@ -9,7 +9,7 @@ To be entered into ProoVer systems must be registered using the [ProoVer system 
 
 For each system entered an entrant must be nominated to handle all issues (e.g., installation and execution difficulties) arising before, during, and after the competition. The nominated entrant must [formally register for ProoVer](https://tptp.org/CASC/J13/CASCRegistration.html). It is not necessary for entrants to physically attend the competition (but funnier!).
 
-<!-- Note about common registration to ProoVer and CASC -->
+Note that, if you participate to both CASC and ProoVer, you only have to pay the registration fees once!
 
 
 ## System Description
