@@ -9,7 +9,7 @@ nav_order: 2
 
 ## Language
 
-* Each benchmark consists of one problem file and its corresponding proof file.
+* Each benchmark consists of one file with axioms and a conjecture (delimited by `% SZS output start ListOfFormulae` and `% SZS output end ListOfFormulae`) and its corresponding proof (delimited by `% SZS output start Proof` and `% SZS output end Proof`).
 * Proofs are written in TSTP format (see the TSTP Quick Guide: https://tptp.org/UserDocs/QuickGuide/Derivations.html).
 * Problems are FOF (First-Order Form) problems.
 * Each problem contains a set of axioms and one conjecture.
@@ -30,7 +30,6 @@ nav_order: 2
 
 
 # Rules 
-
 
 Not all problematic cases are explicitly described in these rules.  
 Participants are responsible for handling edge cases and for deciding what should or should not be considered an acceptable proof according to the TSTP standard and general proof-checking principles.
