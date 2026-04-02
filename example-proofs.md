@@ -10,6 +10,12 @@ nav_order: 3
 ### Example 1
 Problem file (`example1_c.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example1_c : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 fof(a1, axiom, p(a) & ~p(b)).
 fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y)))).
@@ -24,12 +30,32 @@ fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('example1_c.p',c)).
 fof(s1, negated_conjecture, ![X] : (p(X) => ![Y] : (p(Y))), inference(negated_conjecture, [status(cth)], [c])).
 fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
 % SZS output end Proof
+
+%------------------------------------------------------------------------------
+% File     : example1_proof : ProoVer 2026
+% Proof    : ../problem/example1_c.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
+% SZS output start Proof
+fof(a1, axiom, p(a) & ~p(b), file('example1_c.p',a1)).
+fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('example1_c.p',c)).
+fof(s1, negated_conjecture, ![X] : (p(X) => ![Y] : (p(Y))), inference(negated_conjecture, [status(cth)], [c])).
+fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
+% SZS output end Proof
 </pre>
 
 ### Example 2
 
 Problem file (`example2_c.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example2_c : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 fof(ax1, axiom, ![X]: (p(X) => p(f(X)))).
 fof(ax2, axiom, p(a)).
@@ -39,6 +65,13 @@ fof(c, conjecture, p(f(f(a)))).
 
 Proof file (`example2_c_proof.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example2_proof : ProoVer 2026
+% Proof    : ../problem/example2_c.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start Proof
 fof(a1, axiom, ![X]: (p(X) => p(f(X))), file('example2_c.p',ax1)).
 fof(a2, axiom, p(a), file('example2_c.p',ax2)).
@@ -55,6 +88,12 @@ fof(s5, plain, $false, inference(consequence, [status(thm)], [s1, s4])).
 
 Problem file (`example3_c.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example3_c : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 %----At every marriage, there is a bride and groom who are in love
 fof(marriage, axiom, 
@@ -77,6 +116,13 @@ fof(c, conjecture,
 
 Proof file (`example3_c_proof.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example3_proof : ProoVer 2026
+% Proof    : ../problem/example3_c.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start Proof
 %----At every marriage, there is a bride and groom who are in love
 fof(marriage, axiom, 
@@ -131,6 +177,12 @@ fof(contradiction, plain,
 
 Problem file (`example1_e.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example1_e : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 fof(a1, axiom, p(a)).
 fof(c, conjecture, ![X] : (p(X))).
@@ -139,6 +191,13 @@ fof(c, conjecture, ![X] : (p(X))).
 
 Proof file (`example1_e_proof.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example1_e_proof : ProoVer 2026
+% Proof    : ../problem/example1_e.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start Proof
 fof(a1, axiom, p(a), file('example1_e.p',a1)).
 fof(c, conjecture, ![X] : (p(X)), file('example1_e.p',c)).
@@ -153,6 +212,12 @@ The `negated_conjecture` step is semantically wrong. The correct negation of a u
 
 Problem file (`example2_e.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example2_e : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_PEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 fof(ax1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X)))).
 fof(c, conjecture, g(f(a)) = f(g(a))).
@@ -161,6 +226,13 @@ fof(c, conjecture, g(f(a)) = f(g(a))).
 
 Proof file (`example2_e_proof.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example2_e_proof : ProoVer 2026
+% Proof    : ../problem/example2_e.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_PEQ
+%------------------------------------------------------------------------------
 % SZS output start Proof
 fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X))), file('example2_e.p',a1)).
 fof(c, conjecture, g(f(a)) = f(g(a)), file('example2_e.p',c)).
@@ -178,6 +250,12 @@ The `deduction` steps are not correct. From `(f(f(X)) = f(g(X)) ∨ g(f(X)) = f(
 
 Problem file (`example3_e.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example3_e : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 %----At every marriage, there is a bride and groom who are in love
 fof(marriage, axiom, 
@@ -200,6 +278,13 @@ fof(c, conjecture,
 
 Proof file (`example3_e_proof.p`):
 <pre>    
+%------------------------------------------------------------------------------
+% File     : example3_e_proof : ProoVer 2026
+% Proof    : ../problem/example3_e.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start Proof
 %----At every marriage, there is a bride and groom who are in love
 fof(marriage, axiom, 
@@ -254,6 +339,12 @@ This proof is wrong as it reuses the same Skolem symbol `sK0` twice.
 
 Problem file (`example4_e.p`):
 <pre>
+%------------------------------------------------------------------------------
+% File     : example4_e : ProoVer 2026
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
 %----At every marriage, there is a bride and groom who are in love
 fof(marriage, axiom, 
@@ -276,7 +367,15 @@ fof(c, conjecture,
 
 Proof file (`example4_e_proof.p`):
 <pre>
-% SZS output start Prooffof(marriage, axiom, 
+%------------------------------------------------------------------------------
+% File     : example4_e_proof : ProoVer 2026
+% Proof    : ../problem/example4_e.p
+% Source   : ProoVer 2026
+% Status   : Unknown
+% SPC      : FOF_UNK_RFO_NEQ
+%------------------------------------------------------------------------------
+% SZS output start Proof
+fof(marriage, axiom, 
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :

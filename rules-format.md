@@ -9,7 +9,7 @@ nav_order: 2
 
 ## Language
 
-* Each benchmark consists of one probleme file with axioms and a conjecture (delimited by `% SZS output start ListOfFormulae` and `% SZS output end ListOfFormulae`) and its corresponding proof file (delimited by `% SZS output start Proof` and `% SZS output end Proof`, which also contains axioms and a conjecture).
+* Each benchmark consists of one problem file with axioms and a conjecture and its corresponding proof file. Note that, in order to connect both files, there is a field `Proof: problem_file.p` in the proof file's header. See the [example](./example-proofs.md) page for more information. 
 * Proofs are written in TSTP format (see the TSTP Quick Guide: https://tptp.org/UserDocs/QuickGuide/Derivations.html).
 * Problems are FOF (First-Order Form) problems.
 * Each problem contains a set of axioms and one conjecture.
