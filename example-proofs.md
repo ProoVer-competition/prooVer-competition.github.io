@@ -24,13 +24,6 @@ fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y)))).
 
 Proof file (`example1_c_proof.p`):
 <pre>
-% SZS output start Proof
-fof(a1, axiom, p(a) & ~p(b), file('example1_c.p',a1)).
-fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('example1_c.p',c)).
-fof(s1, negated_conjecture, ![X] : (p(X) => ![Y] : (p(Y))), inference(negated_conjecture, [status(cth)], [c])).
-fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
-% SZS output end Proof
-
 %------------------------------------------------------------------------------
 % File     : example1_proof : ProoVer 2026
 % Proof    : ../problem/example1_c.p
