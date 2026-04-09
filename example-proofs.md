@@ -32,8 +32,8 @@ Proof file (`example1_c_proof.p`):
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, p(a) & ~p(b), file('example1_c.p',a1)).
-fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('example1_c.p',c)).
+fof(a1, axiom, p(a) & ~p(b), file('Problems/example1_c.p',a1)).
+fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('Problems/example1_c.p',c)).
 fof(s1, negated_conjecture, ![X] : (p(X) => ![Y] : (p(Y))), inference(negated_conjecture, [status(cth)], [c])).
 fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
 % SZS output end Proof
@@ -66,9 +66,9 @@ Proof file (`example2_c_proof.p`):
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, ![X]: (p(X) => p(f(X))), file('example2_c.p',ax1)).
-fof(a2, axiom, p(a), file('example2_c.p',ax2)).
-fof(c, conjecture, p(f(f(a))), file('example2_c.p',c)).
+fof(a1, axiom, ![X]: (p(X) => p(f(X))), file('Problems/example2_c.p',ax1)).
+fof(a2, axiom, p(a), file('Problems/example2_c.p',ax2)).
+fof(c, conjecture, p(f(f(a))), file('Problems/example2_c.p',c)).
 fof(s1, negated_conjecture, ~p(f(f(a))), inference(negated_conjecture, [status(thm)], [c])).
 fof(s2, plain, p(a) => p(f(a)), inference(instantiate, [status(thm)], [a1])).
 fof(s3, plain, p(f(a)) => p(f(f(a))), inference(instantiate, [status(thm)], [a1])).
@@ -122,17 +122,17 @@ fof(marriage, axiom,
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-    in_love(Groom, Bride), file('example3_c.p',marriage)).
+    in_love(Groom, Bride), file('Problems/example3_c.p',marriage)).
 
 %----There exists at least one marriage
 fof(exists_marriage, axiom, 
-    is_marriage(m0), file('example3_c.p',exists_marriage)).
+    is_marriage(m0), file('Problems/example3_c.p',exists_marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('example3_c.p',conjecture)).
+    in_love(X, Y), file('Problems/example3_c.p',conjecture)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
@@ -192,8 +192,8 @@ Proof file (`example1_e_proof.p`):
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, p(a), file('example1_e.p',a1)).
-fof(c, conjecture, ![X] : (p(X)), file('example1_e.p',c)).
+fof(a1, axiom, p(a), file('Problems/example1_e.p',a1)).
+fof(c, conjecture, ![X] : (p(X)), file('Problems/example1_e.p',c)).
 fof(s1, negated_conjecture, ![X] : (~p(X)), inference(negated_conjecture, [status(cth)], [c])).
 fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
 % SZS output end Proof
@@ -227,8 +227,8 @@ Proof file (`example2_e_proof.p`):
 % SPC      : FOF_UNK_RFO_PEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X))), file('example2_e.p',a1)).
-fof(c, conjecture, g(f(a)) = f(g(a)), file('example2_e.p',c)).
+fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X))), file('Problems/example2_e.p',a1)).
+fof(c, conjecture, g(f(a)) = f(g(a)), file('Problems/example2_e.p',c)).
 fof(s1, negated_conjecture, ~(g(f(a)) = f(g(a))), inference(negated_conjecture, [status(thm)], [c])).
 fof(s2, plain, f(f(a)) = f(g(a)), inference(deduction, [status(thm)], [a1])).
 fof(s3, plain, f(f(a)) = g(f(a)), inference(deduction, [status(thm)], [a1])).
@@ -284,17 +284,17 @@ fof(marriage, axiom,
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-    in_love(Groom, Bride), file('example3_e.p',marriage)).
+    in_love(Groom, Bride), file('Problems/example3_e.p',marriage)).
 
 %----There exists at least one marriage
 fof(exists_marriage, axiom, 
-    is_marriage(m0), file('example3_e.p',exists_marriage)).
+    is_marriage(m0), file('Problems/example3_e.p',exists_marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('example3_e.p',conjecture)).
+    in_love(X, Y), file('Problems/example3_e.p',conjecture)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
@@ -372,17 +372,17 @@ fof(marriage, axiom,
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-    in_love(Groom, Bride), file('example4_e.p',marriage)).
+    in_love(Groom, Bride), file('Problems/example4_e.p',marriage)).
 
 %----There exists at least one marriage
 fof(exists_marriage, axiom, 
-    is_marriage(m0), file('example4_e.p',exists_marriage)).
+    is_marriage(m0), file('Problems/example4_e.p',exists_marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('example4_e.p',conjecture)).
+    in_love(X, Y), file('Problems/example4_e.p',conjecture)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
