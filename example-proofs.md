@@ -26,7 +26,7 @@ Proof file (`example1_c_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : example1_proof : ProoVer 2026
-% Proof    : ../problem/example1_c.p
+% Proof    : Problems/example1_c.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -60,7 +60,7 @@ Proof file (`example2_c_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : example2_proof : ProoVer 2026
-% Proof    : ../problem/example2_c.p
+% Proof    : Problems/example2_c.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -111,7 +111,7 @@ Proof file (`example3_c_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : example3_proof : ProoVer 2026
-% Proof    : ../problem/example3_c.p
+% Proof    : Problems/example3_c.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -186,7 +186,7 @@ Proof file (`example1_e_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : example1_e_proof : ProoVer 2026
-% Proof    : ../problem/example1_e.p
+% Proof    : Problems/example1_e.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -221,7 +221,7 @@ Proof file (`example2_e_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : example2_e_proof : ProoVer 2026
-% Proof    : ../problem/example2_e.p
+% Proof    : Problems/example2_e.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_PEQ
@@ -273,7 +273,7 @@ Proof file (`example3_e_proof.p`):
 <pre>    
 %------------------------------------------------------------------------------
 % File     : example3_e_proof : ProoVer 2026
-% Proof    : ../problem/example3_e.p
+% Proof    : Problems/example3_e.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -362,7 +362,7 @@ Proof file (`example4_e_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : example4_e_proof : ProoVer 2026
-% Proof    : ../problem/example4_e.p
+% Proof    : Problems/example4_e.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ

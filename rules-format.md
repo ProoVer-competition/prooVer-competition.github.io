@@ -9,7 +9,7 @@ nav_order: 2
 
 ## Language
 
-* Each benchmark consists of one problem file with axioms and a conjecture and its corresponding proof file. Note that, in order to connect both files, there is a field `Proof: problem_file.p` in the proof file's header. See the [example](./example-proofs.md) page for more information. 
+* Each benchmark consists of one problem file with axioms and a conjecture and its corresponding proof file. Note that, in order to connect both files, there is a field `Proof: problem_file.p` in the proof file's header. All problem files will be located into a `Problems/` folder. See the [example](./example-proofs.md) page for more information. 
 * Proofs are written in TSTP format (see the TSTP Quick Guide: https://tptp.org/UserDocs/QuickGuide/Derivations.html).
 * Problems are FOF (First-Order Form) problems.
 * Each problem contains a set of axioms and one conjecture.
