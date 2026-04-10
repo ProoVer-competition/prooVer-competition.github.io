@@ -5,6 +5,8 @@ permalink: /example-proofs/
 nav_order: 3
 ---
 
+This page presents examples of proofs, both good and evel. An archive containing these examples is available [here](./assets/proover.tgz).
+
 # Correct Proofs
 
 ### Example 1
