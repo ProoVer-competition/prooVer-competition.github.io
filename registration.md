@@ -21,4 +21,7 @@ A system description must be provided for each proof checker system, using [this
 
 The system description must be emailed to the competition organizer by the [system submission deadline](./competitions/2026.md). The system descriptions form part of the competition proceedings.
 
+## Sample Solutions
+For systems in the divisions that require solution output, representative sample solutions must be emailed to the competition organizer by the sample solutions deadline. 
+Sample are those of the [example page](./example-proof.md). 
 
