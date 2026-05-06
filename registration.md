@@ -23,5 +23,5 @@ The system description must be emailed to the competition organizer by the [syst
 
 ## Sample Solutions
 For systems in the divisions that require solution output, representative sample solutions must be emailed to the competition organizer by the sample solutions deadline. 
-Sample are those of the [example page](./example-proof.md). 
+Sample must be run on the examples from the [example page](./example-proofs.md). 
 
