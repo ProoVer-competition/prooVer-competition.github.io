@@ -51,6 +51,14 @@ Participants are responsible for handling edge cases and for deciding what shoul
   See the [TSTP documentation](https://tptp.org/UserDocs/QuickGuide/Derivations.html) and
   [Example 3](./example-proofs.md) in the correct proofs section for detailed illustrations.
 
+* Negated conjecture:
+  A negated conjecture step must:
+  * use the inference rule name `negated_conjecture`;
+  * have the status `cth`;
+  * have a parent which is a `conjecture`;
+  * have a formula that is the negation of the parent. This last point can be checked either internally, or using an external ATP. 
+
+
 
 ## Unspecified Rules
 
