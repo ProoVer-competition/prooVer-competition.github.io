@@ -5,7 +5,7 @@ permalink: /example-proofs/
 nav_order: 3
 ---
 
-This page presents examples of proofs, both good and evel. An archive containing these examples is available [here](./assets/proover.tgz).
+This page presents examples of proofs, both good and evel. An archive containing these examples is available [here](./assets/proover.zip).
 
 # Correct Proofs
 
@@ -71,10 +71,10 @@ Proof file (`example2_c_proof.p`):
 fof(a1, axiom, ![X]: (p(X) => p(f(X))), file('Problems/example2_c.p',ax1)).
 fof(a2, axiom, p(a), file('Problems/example2_c.p',ax2)).
 fof(c, conjecture, p(f(f(a))), file('Problems/example2_c.p',c)).
-fof(s1, negated_conjecture, ~p(f(f(a))), inference(negated_conjecture, [status(thm)], [c])).
+fof(s1, negated_conjecture, ~p(f(f(a))), inference(negated_conjecture, [status(cth)], [c])).
 fof(s2, plain, p(a) => p(f(a)), inference(instantiate, [status(thm)], [a1])).
 fof(s3, plain, p(f(a)) => p(f(f(a))), inference(instantiate, [status(thm)], [a1])).
-fof(s4, plain, p(f(f(a))), inference(horn, [status(thm)], [a2, s1, s2])).
+fof(s4, plain, p(f(f(a))), inference(horn, [status(thm)], [a2, s1, s2, s3])).
 fof(s5, plain, $false, inference(consequence, [status(thm)], [s1, s4])).
 % SZS output end Proof
 </pre>
@@ -231,7 +231,7 @@ Proof file (`example2_e_proof.p`):
 % SZS output start Proof
 fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X))), file('Problems/example2_e.p',a1)).
 fof(c, conjecture, g(f(a)) = f(g(a)), file('Problems/example2_e.p',c)).
-fof(s1, negated_conjecture, ~(g(f(a)) = f(g(a))), inference(negated_conjecture, [status(thm)], [c])).
+fof(s1, negated_conjecture, ~(g(f(a)) = f(g(a))), inference(negated_conjecture, [status(cth)], [c])).
 fof(s2, plain, f(f(a)) = f(g(a)), inference(deduction, [status(thm)], [a1])).
 fof(s3, plain, f(f(a)) = g(f(a)), inference(deduction, [status(thm)], [a1])).
 fof(s4, plain, g(f(a)) = f(g(a)), inference(deduction, [status(thm)], [s2, s3])).
@@ -296,7 +296,7 @@ fof(exists_marriage, axiom,
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('Problems/example3_e.p',conjecture)).
+    in_love(X, Y), file('Problems/example3_e.p',c)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
@@ -384,7 +384,7 @@ fof(exists_marriage, axiom,
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('Problems/example4_e.p',conjecture)).
+    in_love(X, Y), file('Problems/example4_e.p',c)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
