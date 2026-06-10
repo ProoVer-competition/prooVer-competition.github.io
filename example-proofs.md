@@ -5,7 +5,7 @@ permalink: /example-proofs/
 nav_order: 3
 ---
 
-This page presents examples of proofs, both good and evel. An archive containing these examples is available [here](./assets/proover.zip).
+This page presents examples of proofs, both good and evel. An archive containing these examples is available [here](./assets/proover.tgz).
 
 # Correct Proofs
 
@@ -97,10 +97,6 @@ fof(marriage, axiom,
     ? [Groom] :
     in_love(Groom, Bride)).
 
-%----There exists at least one marriage
-fof(exists_marriage, axiom, 
-    is_marriage(m0)).
-
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
@@ -125,10 +121,6 @@ fof(marriage, axiom,
     ? [Bride] :
     ? [Groom] :
     in_love(Groom, Bride), file('Problems/example3_c.p',marriage)).
-
-%----There exists at least one marriage
-fof(exists_marriage, axiom, 
-    is_marriage(m0), file('Problems/example3_c.p',exists_marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
@@ -259,10 +251,6 @@ fof(marriage, axiom,
     ? [Groom] :
     in_love(Groom, Bride)).
 
-%----There exists at least one marriage
-fof(exists_marriage, axiom, 
-    is_marriage(m0)).
-
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
@@ -288,10 +276,6 @@ fof(marriage, axiom,
     ? [Groom] :
     in_love(Groom, Bride), file('Problems/example3_e.p',marriage)).
 
-%----There exists at least one marriage
-fof(exists_marriage, axiom, 
-    is_marriage(m0), file('Problems/example3_e.p',exists_marriage)).
-
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
@@ -315,7 +299,7 @@ fof(bride,plain,
 fof(groom,plain,
     ! [Marriage] :
       in_love(sK0(Marriage),sK0(Marriage)),
-    inference(skolemize,[status(esa), new_symbols(skolem, [sK0]), skolemize(Groom sK0(Marriage))], [bride])).
+    inference(skolemize,[status(esa), new_symbols(skolem, [sK0]), skolemize(Groom,  sK0(Marriage))], [bride])).
 
 %----Instantiate at the known marriage m0
 fof(groom_m0, plain, 
@@ -348,10 +332,6 @@ fof(marriage, axiom,
     ? [Groom] :
     in_love(Groom, Bride)).
 
-%----There exists at least one marriage
-fof(exists_marriage, axiom, 
-    is_marriage(m0)).
-
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
@@ -375,10 +355,6 @@ fof(marriage, axiom,
     ? [Bride] :
     ? [Groom] :
     in_love(Groom, Bride), file('Problems/example4_e.p',marriage)).
-
-%----There exists at least one marriage
-fof(exists_marriage, axiom, 
-    is_marriage(m0), file('Problems/example4_e.p',exists_marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
