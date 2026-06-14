@@ -27,7 +27,7 @@ nav_order: 2
 * It is forbidden to re-check the entire conjecture independently as a separate sanity check.
 * There are no restrictions on the order of proof steps.
 * All provided proofs will be syntactically well-formed and parsable in TPTP.
-* Axioms must be imported from the corresponding problem file, for instance : `fof(a1, axiom, ![X]: p(X), file('Problems/example_c.p', a1)).`. We guarantee that the file given in the `file` directive will correspond to the one given in the header of the proof file.
+* Axioms must be imported from the corresponding problem file, for instance : `fof(a1, axiom, ![X]: p(X), file('Problems/example_c.p', a1)).`. We guarantee that, in correct and incorrect proof, the file given in the `file` directive will correspond to the one given in the header of the proof file. This can be trusted and consequencially the verifier never needs to parse the header.
 
 
 # Rules 
