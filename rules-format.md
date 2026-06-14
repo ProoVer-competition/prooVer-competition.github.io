@@ -67,7 +67,7 @@ Participants are responsible for handling edge cases and for deciding what shoul
     the axiom in that file, for instance:
     `fof(ax1, axiom, ![Y]: p(Y), file('Problems/example_c.p', a1)).`;
   * have a formula that is alpha-equivalent to the formula named in the `file` directive
-    within the referenced problem file.
+    within the referenced problem file. This point can be checked either internally, or using an external ATP. 
 
   The name of the axiom step in the proof file may differ from the name used in the
   problem file. The checker must verify that the referenced axiom exists in the problem
