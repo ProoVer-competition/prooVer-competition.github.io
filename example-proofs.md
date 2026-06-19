@@ -52,7 +52,7 @@ Problem file (`example2_c.p`):
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start ListOfFormulae
-fof(ax1, axiom, ![X]: (p(X) => p(f(X)))).
+fof(ax1, axiom, ![Y]: (p(Y) => p(f(Y)))).
 fof(ax2, axiom, p(a)).
 fof(c, conjecture, p(f(f(a)))).
 % SZS output end ListOfFormulae

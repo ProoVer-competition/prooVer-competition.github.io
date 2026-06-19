@@ -27,6 +27,7 @@ nav_order: 2
 * It is forbidden to re-check the entire conjecture independently as a separate sanity check.
 * There are no restrictions on the order of proof steps.
 * All provided proofs will be syntactically well-formed and parsable in TPTP.
+* Axioms and the conjecture must be imported from the corresponding problem file, for instance : `fof(a1, axiom, ![X]: p(X), file('Problems/example_c.p', a1)).`. We guarantee that, in correct and incorrect proofs, the file given in the `file` directive will correspond to the one given in the header of the proof file. This can be trusted and, consequently, the verifier never needs to parse the header.
 
 
 # Rules 
@@ -38,7 +39,6 @@ Participants are responsible for handling edge cases and for deciding what shoul
 ## Specified Rules 
 
 * Skolemization:
-
   A skolemization inference step must:
 
   * use the inference rule name `skolemize`;
@@ -49,15 +49,29 @@ Participants are responsible for handling edge cases and for deciding what shoul
   The Skolem term must depend exactly on the universally quantified variables that are in scope at the point where the existential variable is eliminated.  
   The resulting formula must be a correct Skolemization of the parent formula.  
   See the [TSTP documentation](https://tptp.org/UserDocs/QuickGuide/Derivations.html) and
-  [Example 3](./example-proofs.md) in the correct proofs section for detailed illustrations.
+  [Example 3](./example-proofs.md) in the correct proofs section for detailed illustrations.  
 
 * Negated conjecture:
   A negated conjecture step must:
   * use the inference rule name `negated_conjecture`;
   * have the status `cth`;
   * have a parent which is a `conjecture`;
-  * have a formula that is the negation of the parent. This last point can be checked either internally, or using an external ATP. 
+  * have a formula that is the negation of the parent. This last point can be checked either internally, or using an external ATP.   
 
+
+* Axioms and conjecture:
+  An axiom step must:
+  * have role `axiom`;
+  * have status `thm`;
+  * include a `file` directive referencing the corresponding problem file (guaranteed to be the same as the one in the header) and the name of
+    the axiom in that file, for instance:
+    `fof(ax1, axiom, ![Y]: p(Y), file('Problems/example_c.p', a1)).`;
+  * have a formula that is alpha-equivalent to the formula named in the `file` directive
+    within the referenced problem file. This point can be checked either internally, or using an external ATP. 
+
+  The name of the axiom step in the proof file may differ from the name used in the
+  problem file. The checker must verify that the referenced axiom exists in the problem
+  file and that the two formulas are equal up to alpha-equivalence.
 
 
 ## Unspecified Rules
