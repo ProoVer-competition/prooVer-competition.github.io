@@ -20,3 +20,5 @@ A system description must be provided for each proof checker system, using [this
 * References.
 
 The system description must be emailed to the competition organizer by the [system submission deadline](./competitions/2026.md). The system descriptions form part of the competition proceedings.
+
+The verifier itself, together with the command line need to launch the proof verifier, must be emailed to the competition organizer by the [system delivery deadline](./competitions/2026.md).
