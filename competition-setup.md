@@ -22,12 +22,13 @@ One proof checker runs on one CPU at a time. No CPU time limits are imposed (so 
 # Output 
 For each input problem, the system must produce exactly one of the following SZS status lines:
 
-* Good proof: `%SZS status Verified`
-* Bad proof: `%SZS status FailedVerified`  
-* Don't know if it's a good or a bad proof: `%SZS status NotVerified`
+* Good proof: `%SZS status VerifiedGood`
+* Bad proof: `%SZS status VerifiedBad`  
+* Don't know: `%SZS status Unknown`
+* Timeout: `% SZS status Timeout`
 
 Any other output will be treated as a failure for the corresponding problem. You can add additional information for the proof output by using `:`, for instance: 
-`%SZS status FailedVerified : Step s2 is incorrect`
+`%SZS status VerifiedBad : Step s2 is incorrect`
 
 # System Evaluation
 * 100 proof validation problems:
