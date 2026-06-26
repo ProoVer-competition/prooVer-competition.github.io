@@ -44,7 +44,7 @@ Participants are responsible for handling edge cases and for deciding what shoul
   * use the inference rule name `skolemize`;
   * have status `esa`;
   * introduce one new Skolem symbol (for instance, `sK`) using `new_symbols(skolem, [sK])`;
-  * explicitly indicate which existential variable (for instance, `Var`) is being skolemized, together with the the resulting Skolem term, using `skolemize(Var, sk(...))`.
+  * explicitly indicate which existential variable (for instance, `Var`) is being skolemized, together with the resulting Skolem term, using `skolemize(Var, sK(...))`.
   
   The Skolem term must depend exactly on the universally quantified variables that are in scope at the point where the existential variable is eliminated.  
   The resulting formula must be a correct Skolemization of the parent formula.  

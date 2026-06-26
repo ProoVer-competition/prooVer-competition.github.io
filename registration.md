@@ -29,4 +29,4 @@ The verifier itself, together with the command line need to launch the proof ver
 
 Representative sample solutions must be emailed to the competition organizer by the sample solutions deadline.  
 
-Sample must be run on the examples available [here](./assets/samples.tgz). 
+Samples must be run on the examples available [here](./assets/samples.tgz). 
