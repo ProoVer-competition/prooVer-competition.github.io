@@ -5,15 +5,15 @@ permalink: /example-proofs/
 nav_order: 3
 ---
 
-This page presents examples of proofs, both good and evel. An archive containing these examples is available [here](./assets/proover.tgz).
+This page presents examples of proofs, both good and evil. An archive containing these examples is available [here](./assets/proover.tgz).
 
 # Correct Proofs
 
 ### Example 1
-Problem file (`example1_c.p`):
+Problem file (`COR001+1.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example1_c : ProoVer 2026
+% File     : COR001+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -24,29 +24,30 @@ fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y)))).
 % SZS output end ListOfFormulae
 </pre>
 
-Proof file (`example1_c_proof.p`):
+Proof file (`COR001+1.s`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example1_proof : ProoVer 2026
-% Proof    : Problems/example1_c.p
+% File     : COR001+1.s : ProoVer 2026
+% Proof    : Problems/COR001+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, p(a) & ~p(b), file('Problems/example1_c.p',a1)).
-fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('Problems/example1_c.p',c)).
+fof(a1, axiom, p(a) & ~p(b), file('Problems/COR001+1.p',a1)).
+fof(c, conjecture, ?[X] : ~(p(X) => ![Y] : (p(Y))), file('Problems/COR001+1.p',c)).
 fof(s1, negated_conjecture, ![X] : (p(X) => ![Y] : (p(Y))), inference(negated_conjecture, [status(cth)], [c])).
 fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
 % SZS output end Proof
+
 </pre>
 
 ### Example 2
 
-Problem file (`example2_c.p`):
+Problem file (`COR002+1.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example2_c : ProoVer 2026
+% File     : COR002+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -58,19 +59,19 @@ fof(c, conjecture, p(f(f(a)))).
 % SZS output end ListOfFormulae
 </pre>
 
-Proof file (`example2_c_proof.p`):
+Proof file (`COR002+1.s`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example2_proof : ProoVer 2026
-% Proof    : Problems/example2_c.p
+% File     : COR002+1.s : ProoVer 2026
+% Proof    : Problems/COR002+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, ![X]: (p(X) => p(f(X))), file('Problems/example2_c.p',ax1)).
-fof(a2, axiom, p(a), file('Problems/example2_c.p',ax2)).
-fof(c, conjecture, p(f(f(a))), file('Problems/example2_c.p',c)).
+fof(a1, axiom, ![X]: (p(X) => p(f(X))), file('Problems/COR002+1.p',ax1)).
+fof(a2, axiom, p(a), file('Problems/COR002+1.p',ax2)).
+fof(c, conjecture, p(f(f(a))), file('Problems/COR002+1.p',c)).
 fof(s1, negated_conjecture, ~p(f(f(a))), inference(negated_conjecture, [status(cth)], [c])).
 fof(s2, plain, p(a) => p(f(a)), inference(instantiate, [status(thm)], [a1])).
 fof(s3, plain, p(f(a)) => p(f(f(a))), inference(instantiate, [status(thm)], [a1])).
@@ -81,10 +82,10 @@ fof(s5, plain, $false, inference(consequence, [status(thm)], [s1, s4])).
 
 ### Example 3
 
-Problem file (`example3_c.p`):
+Problem file (`COR003+1.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example3_c : ProoVer 2026
+% File     : COR003+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -105,11 +106,11 @@ fof(c, conjecture,
 % SZS output end ListOfFormulae
 </pre>  
 
-Proof file (`example3_c_proof.p`):
+Proof file (`COR003+1.s`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example3_proof : ProoVer 2026
-% Proof    : Problems/example3_c.p
+% File     : COR003+1.s : ProoVer 2026
+% Proof    : Problems/COR003+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -120,13 +121,13 @@ fof(marriage, axiom,
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-    in_love(Groom, Bride), file('Problems/example3_c.p',marriage)).
+    in_love(Groom, Bride), file('Problems/COR003+1.p',marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('Problems/example3_c.p',conjecture)).
+    in_love(X, Y), file('Problems/COR003+1.p',c)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
@@ -162,10 +163,10 @@ fof(contradiction, plain,
 
 ### Example 1
 
-Problem file (`example1_e.p`):
+Problem file (`EVL001+1.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example1_e : ProoVer 2026
+% File     : EVL001+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -176,18 +177,18 @@ fof(c, conjecture, ![X] : (p(X))).
 % SZS output end ListOfFormulae
 </pre>
 
-Proof file (`example1_e_proof.p`):
+Proof file (`EVL001+1.s`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example1_e_proof : ProoVer 2026
-% Proof    : Problems/example1_e.p
+% File     : EVL001+1.s : ProoVer 2026
+% Proof    : Problems/EVL001+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, p(a), file('Problems/example1_e.p',a1)).
-fof(c, conjecture, ![X] : (p(X)), file('Problems/example1_e.p',c)).
+fof(a1, axiom, p(a), file('Problems/EVL001+1.p',a1)).
+fof(c, conjecture, ![X] : (p(X)), file('Problems/EVL001+1.p',c)).
 fof(s1, negated_conjecture, ![X] : (~p(X)), inference(negated_conjecture, [status(cth)], [c])).
 fof(f1, plain, $false, inference(consequence, [status(thm)], [s1, a1])).
 % SZS output end Proof
@@ -197,10 +198,10 @@ The `negated_conjecture` step is semantically wrong. The correct negation of a u
 
 ### Example 2
 
-Problem file (`example2_e.p`):
+Problem file (`EVL002+1.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example2_e : ProoVer 2026
+% File     : EVL002+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_PEQ
@@ -211,18 +212,18 @@ fof(c, conjecture, g(f(a)) = f(g(a))).
 % SZS output end ListOfFormulae
 </pre>
 
-Proof file (`example2_e_proof.p`):
+Proof file (`EVL002+1.s`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example2_e_proof : ProoVer 2026
-% Proof    : Problems/example2_e.p
+% File     : EVL002+1.s : ProoVer 2026
+% Proof    : Problems/EVL002+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_PEQ
 %------------------------------------------------------------------------------
 % SZS output start Proof
-fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X))), file('Problems/example2_e.p',a1)).
-fof(c, conjecture, g(f(a)) = f(g(a)), file('Problems/example2_e.p',c)).
+fof(a1, axiom, ![X] : (f(f(X)) = f(g(X)) | g(f(X)) = f(f(X))), file('Problems/EVL002+1.p',a1)).
+fof(c, conjecture, g(f(a)) = f(g(a)), file('Problems/EVL002+1.p',c)).
 fof(s1, negated_conjecture, ~(g(f(a)) = f(g(a))), inference(negated_conjecture, [status(cth)], [c])).
 fof(s2, plain, f(f(a)) = f(g(a)), inference(deduction, [status(thm)], [a1])).
 fof(s3, plain, f(f(a)) = g(f(a)), inference(deduction, [status(thm)], [a1])).
@@ -235,10 +236,10 @@ The `deduction` steps are not correct. From `(f(f(X)) = f(g(X)) ∨ g(f(X)) = f(
 
 ### Example 3
 
-Problem file (`example3_e.p`):
+Problem file (`EVL003+1.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example3_e : ProoVer 2026
+% File     : EVL003+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -259,11 +260,11 @@ fof(c, conjecture,
 % SZS output end ListOfFormulae
 </pre>
 
-Proof file (`example3_e_proof.p`):
+Proof file (`EVL003+1.s`):
 <pre>    
 %------------------------------------------------------------------------------
-% File     : example3_e_proof : ProoVer 2026
-% Proof    : Problems/example3_e.p
+% File     : EVL003+1.s : ProoVer 2026
+% Proof    : Problems/EVL003+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -274,13 +275,13 @@ fof(marriage, axiom,
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-    in_love(Groom, Bride), file('Problems/example3_e.p',marriage)).
+    in_love(Groom, Bride), file('Problems/EVL003+1.p',marriage)).
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('Problems/example3_e.p',c)).
+    in_love(X, Y), file('Problems/EVL003+1.p',c)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
@@ -299,7 +300,7 @@ fof(bride,plain,
 fof(groom,plain,
     ! [Marriage] :
       in_love(sK0(Marriage),sK0(Marriage)),
-    inference(skolemize,[status(esa), new_symbols(skolem, [sK0]), skolemize(Groom,  sK0(Marriage))], [bride])).
+    inference(skolemize,[status(esa), new_symbols(skolem, [sK0]), skolemize(Groom, sK0(Marriage))], [bride])).
 
 %----Instantiate at the known marriage m0
 fof(groom_m0, plain, 
@@ -319,7 +320,7 @@ This proof is wrong as it reuses the same Skolem symbol `sK0` twice.
 Problem file (`example4_e.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example4_e : ProoVer 2026
+% File     : EVL004+1.p : ProoVer 2026
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -343,8 +344,8 @@ fof(c, conjecture,
 Proof file (`example4_e_proof.p`):
 <pre>
 %------------------------------------------------------------------------------
-% File     : example4_e_proof : ProoVer 2026
-% Proof    : Problems/example4_e.p
+% File     : EVL004+1.s : ProoVer 2026
+% Proof    : Problems/EVL004+1.p
 % Source   : ProoVer 2026
 % Status   : Unknown
 % SPC      : FOF_UNK_RFO_NEQ
@@ -354,13 +355,14 @@ fof(marriage, axiom,
     ! [Marriage] :
     ? [Bride] :
     ? [Groom] :
-    in_love(Groom, Bride), file('Problems/example4_e.p',marriage)).
+    in_love(Groom, Bride), file('Problems/EVL004+1.p',marriage)).
+
 
 %----Conjecture: someone is in love
 fof(c, conjecture, 
     ? [X] :
     ? [Y] :
-    in_love(X, Y), file('Problems/example4_e.p',c)).
+    in_love(X, Y), file('Problems/EVL004+1.p',c)).
 
 %----Negate conjecture: nobody is in love
 fof(neg_c, negated_conjecture, 
