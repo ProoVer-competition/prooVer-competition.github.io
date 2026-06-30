@@ -51,6 +51,7 @@ Participants are responsible for handling edge cases and for deciding what shoul
   See the [TSTP documentation](https://tptp.org/UserDocs/QuickGuide/Derivations.html) and
   [Example 3](./example-proofs.md) in the correct proofs section for detailed illustrations.  
 
+
 * Negated conjecture:
   A negated conjecture step must:
   * use the inference rule name `negated_conjecture`;
@@ -60,17 +61,16 @@ Participants are responsible for handling edge cases and for deciding what shoul
 
 
 * Axioms and conjecture:
-  An axiom step must:
-  * have role `axiom`;
-  * have status `thm`;
+  An axiom or conjecture step must:
+  * have role `axiom` or `conjecture`;
   * include a `file` directive referencing the corresponding problem file (guaranteed to be the same as the one in the header) and the name of
     the axiom in that file, for instance:
     `fof(ax1, axiom, ![Y]: p(Y), file('Problems/example_c.p', a1)).`;
   * have a formula that is alpha-equivalent to the formula named in the `file` directive
     within the referenced problem file. This point can be checked either internally, or using an external ATP. 
 
-  The name of the axiom step in the proof file may differ from the name used in the
-  problem file. The checker must verify that the referenced axiom exists in the problem
+  The name of the step in the proof file may differ from the name used in the
+  problem file. The checker must verify that the referenced step exists in the problem
   file and that the two formulas are equal up to alpha-equivalence.
 
 
