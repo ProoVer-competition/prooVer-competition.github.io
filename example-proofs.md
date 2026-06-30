@@ -317,7 +317,7 @@ This proof is wrong as it reuses the same Skolem symbol `sK0` twice.
 
 ## Example 4
 
-Problem file (`example4_e.p`):
+Problem file (`EVL004+1.p`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : EVL004+1.p : ProoVer 2026
@@ -341,7 +341,7 @@ fof(c, conjecture,
 % SZS output end ListOfFormulae
 </pre>
 
-Proof file (`example4_e_proof.p`):
+Proof file (`EVL004+1.s`):
 <pre>
 %------------------------------------------------------------------------------
 % File     : EVL004+1.s : ProoVer 2026
