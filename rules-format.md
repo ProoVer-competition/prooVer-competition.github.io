@@ -70,7 +70,7 @@ Participants are responsible for handling edge cases and for deciding what shoul
     within the referenced problem file. This point can be checked either internally, or using an external ATP. 
 
   The name of the step in the proof file may differ from the name used in the
-  problem file. The checker must verify that the referenced step exists in the problem
+  problem file. The checker must verify that the referenced annotated formula exists in the problem
   file and that the two formulas are equal up to alpha-equivalence.
 
 
