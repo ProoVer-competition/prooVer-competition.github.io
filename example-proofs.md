@@ -148,7 +148,8 @@ fof(groom, plain,
 
 %----Instantiate at the known marriage m0
 fof(groom_m0, plain, 
-    in_love(sK1(m0), sK0(m0)), inference(instantiate, [status(thm)], [groom])).
+    in_love(sK1(m0), sK0(m0)), 
+    inference(instantiate,[status(thm),new_symbols(herbrand,[m0])], [groom])).
 
 %----Contradiction
 fof(contradiction, plain, 
@@ -304,7 +305,8 @@ fof(groom,plain,
 
 %----Instantiate at the known marriage m0
 fof(groom_m0, plain, 
-    in_love(sK0(m0), sK0(m0)), inference(instantiate, [status(thm)], [groom])).
+    in_love(sK1(m0), sK0(m0)), 
+    inference(instantiate,[status(thm),new_symbols(herbrand,[m0])], [groom])).
 
 %----Contradiction
 fof(contradiction, plain, 
@@ -385,7 +387,8 @@ fof(groom,plain,
 
 %----Instantiate at the known marriage m0
 fof(groom_m0, plain, 
-    in_love(m0, sK0(m0)), inference(instantiate, [status(thm)], [groom])).
+    in_love(sK1(m0), sK0(m0)), 
+    inference(instantiate,[status(thm),new_symbols(herbrand,[m0])], [groom])).
 
 %----Contradiction
 fof(contradiction, plain, 
