@@ -12,7 +12,7 @@ nav_order: 1
 
 # Computers
 The competition computers have:
-* An octa-core Intel(R) Xeon(R) E5-2620 v4 @ 2.10GHz, without hyperthreading.
+* Two octa-core Intel(R) Xeon(R) CPU E5-2620 v4 @ 2.10GHz CPUs, with hyperthreading (two threads per core)
 * 128GiB memory
 * The CentOS Linux release 7.4.1708 (Core) operating system, Linux kernel 3.10.0-693.el7.x86_64.
 
